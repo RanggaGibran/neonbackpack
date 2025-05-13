@@ -1,0 +1,227 @@
+# Konfigurasi NusaBackpack Plugin
+
+# Pengaturan Database
+database:
+  # Pilihan: SQLite, MySQL (saat ini hanya mendukung SQLite)
+  type: SQLite
+
+# Pengaturan Umum
+settings:
+  # Apakah pemain baru akan menerima backpack dasar secara otomatis
+  give-new-player-backpack: true
+  # Apakah backpack yang dipakai di kepala bisa dibuka dengan klik kanan
+  helmet-backpack-access: true
+  # Apakah anti-theft protection aktif
+  enable-anti-theft: true
+  # Lindungi backpack dari jatuh saat pemain mati
+  protect-backpack-on-death: true
+  # Mencegah pemain mengambil backpack jatuh milik pemain lain
+  prevent-pickup-dropped-backpack: true
+
+# Pengaturan GUI
+gui:
+  # Tampilkan tombol sortir
+  show-sort-button: true
+  # Tampilkan tombol filter (untuk special backpack)
+  show-filter-button: true
+  # Tampilkan tombol navigasi halaman
+  show-pagination: true
+  # Tampilkan tombol kompres (untuk mengubah item seperti 9 iron ingot menjadi 1 iron block)
+  show-compress-button: true
+
+# Pengaturan Backpack
+backpacks:
+  types:
+    # Backpack Reguler dengan Fitur Khusus
+    BASIC:
+      slots: 20
+      display-name: "§7§lBasic Backpack"
+      # Gunakan custom model data daripada texture
+      model-data: 1009
+      permission: "neonbackpack.basic"
+      special-type: "BASIC"
+      auto-collect: false
+      # Basic backpack dapat menyimpan semua item, tapi tidak auto-collect
+      
+    ADVANCED:
+      slots: 18
+      display-name: "§a§lAdvanced Backpack"
+      model-data: 1010
+      permission: "neonbackpack.advanced"
+      special-type: "ADVANCED"
+      auto-collect: false
+      # Advanced backpack dapat menyimpan semua item, tapi tidak auto-collect
+      
+    PREMIUM:
+      slots: 27
+      display-name: "§e§lPremium Backpack"
+      model-data: 1011
+      permission: "neonbackpack.premium"
+      special-type: "PREMIUM"
+      auto-collect: true
+      # Premium backpack dapat auto-collect semua tipe item
+      
+    ULTIMATE:
+      slots: 36
+      display-name: "§d§lUltimate Backpack"
+      model-data: 1012
+      permission: "neonbackpack.ultimate"
+      special-type: "ULTIMATE"
+      auto-collect: true
+      # Ultimate backpack dapat auto-collect dan auto-compress
+      auto-compress: true
+    
+    # Backpack Khusus
+    MINING:
+      slots: 27
+      display-name: "§8§lMining Backpack"
+      model-data: 1013
+      special-type: "MINING"
+      permission: "neonbackpack.mining"
+      auto-collect: true
+      auto-smelt: true
+      allowed-materials:
+        - COAL
+        - IRON_ORE
+        - GOLD_ORE
+        - COPPER_ORE
+        - DIAMOND_ORE
+        - EMERALD_ORE
+        - REDSTONE_ORE
+        - LAPIS_ORE
+        - STONE
+        - DEEPSLATE
+        - COBBLESTONE
+        - ANDESITE
+        - GRANITE
+        - DIORITE
+        - TUFF
+        - DEEPSLATE_IRON_ORE
+        - DEEPSLATE_GOLD_ORE
+        - DEEPSLATE_COPPER_ORE
+        - DEEPSLATE_DIAMOND_ORE
+        - DEEPSLATE_EMERALD_ORE
+        - DEEPSLATE_REDSTONE_ORE
+        - DEEPSLATE_LAPIS_ORE
+        - RAW_IRON
+        - RAW_GOLD
+        - RAW_COPPER
+        - ANCIENT_DEBRIS
+      
+    FARMING:
+      slots: 27
+      display-name: "§2§lFarming Backpack"
+      model-data: 1013
+      special-type: "FARMING" 
+      permission: "neonbackpack.farming"
+      auto-collect: true
+      allowed-materials:
+        - WHEAT
+        - CARROT
+        - POTATO
+        - BEETROOT
+        - MELON_SLICE
+        - PUMPKIN
+        - SUGAR_CANE
+        - SWEET_BERRIES
+        - APPLE
+        - WHEAT_SEEDS
+        - BEETROOT_SEEDS
+        - PUMPKIN_SEEDS
+        - MELON_SEEDS
+      
+    COMBAT:
+      slots: 27
+      display-name: "§4§lCombat Backpack"
+      model-data: 1013
+      special-type: "COMBAT"
+      permission: "neonbackpack.combat"
+      auto-collect: true
+      allowed-materials:
+        - DIAMOND_SWORD
+        - IRON_SWORD
+        - STONE_SWORD
+        - WOODEN_SWORD
+        - NETHERITE_SWORD
+        - BOW
+        - CROSSBOW
+        - ARROW
+        - SPECTRAL_ARROW
+        - SHIELD
+        - TOTEM_OF_UNDYING
+        - GOLDEN_APPLE
+        - ENCHANTED_GOLDEN_APPLE
+        - POTION
+        - SPLASH_POTION
+        - LINGERING_POTION
+
+# Konfigurasi Kompresi Item
+compression:
+  enabled: true
+  recipes:
+    # Format: [bahan, jumlah, hasil]
+    - [IRON_INGOT, 9, IRON_BLOCK]
+    - [GOLD_INGOT, 9, GOLD_BLOCK]
+    - [DIAMOND, 9, DIAMOND_BLOCK]
+    - [EMERALD, 9, EMERALD_BLOCK]
+    - [REDSTONE, 9, REDSTONE_BLOCK]
+    - [COAL, 9, COAL_BLOCK]
+    - [COPPER_INGOT, 9, COPPER_BLOCK]
+    - [LAPIS_LAZULI, 9, LAPIS_BLOCK]
+    - [WHEAT, 9, HAY_BLOCK]
+
+# Pengaturan Pesan
+messages:
+  prefix: "§b[NusaBackpack] §f"
+  backpack-opened: "ʙᴀᴄᴋᴘᴀᴄᴋ ᴛᴇʀʙᴜᴋᴀ!"
+  backpack-closed: "ʙᴀᴄᴋᴘᴀᴄᴋ ᴛᴇʀsɪᴍᴘᴀɴ!"
+  no-permission: "ᴀɴᴅᴀ ᴛɪᴅᴀᴋ ᴍᴇᴍɪʟɪᴋɪ ɪᴢɪɴ ᴜɴᴛᴜᴋ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ᴘᴇʀɪɴᴛᴀʜ ɪɴɪ!"
+  backpack-received: "ᴀɴᴅᴀ ᴍᴇɴᴇʀɪᴍᴀ sᴇʙᴜᴀʜ ʙᴀᴄᴋᴘᴀᴄᴋ ʙᴀʀᴜ!"
+  backpack-given: "ʙᴀᴄᴋᴘᴀᴄᴋ ᴛᴇʟᴀʜ ᴅɪʙᴇʀɪᴋᴀɴ ᴋᴇᴘᴀᴅᴀ %player%!"
+  backpack-not-found: "ᴛɪᴘᴇ ʙᴀᴄᴋᴘᴀᴄᴋ ᴛɪᴅᴀᴋ ᴅɪᴛᴇᴍᴜᴋᴀɴ!"
+  player-not-found: "ᴘᴇᴍᴀɪɴ ᴛɪᴅᴀᴋ ᴅɪᴛᴇᴍᴜᴋᴀɴ!"
+  backpack-upgraded: "ʙᴀᴄᴋᴘᴀᴄᴋ ᴛᴇʟᴀʜ ᴅɪ-ᴜᴘɢʀᴀᴅᴇ!"
+  backpack-max-level: "ʙᴀᴄᴋᴘᴀᴄᴋ ᴀɴᴅᴀ sᴜᴅᴀʜ ᴅɪ ʟᴇᴠᴇʟ ᴍᴀᴋsɪᴍᴀʟ!"
+  backpack-special-auto-collect: "ɪᴛᴇᴍ ᴏᴛᴏᴍᴀᴛɪs ᴅɪᴍᴀsᴜᴋᴋᴀɴ ᴋᴇ %backpack%!"
+  backpack-item-not-allowed: "ɪᴛᴇᴍ ɪɴɪ ᴛɪᴅᴀᴋ ʙɪsᴀ ᴅɪsɪᴍᴘᴀɴ ᴅᴀʟᴀᴍ %backpack%!"
+  backpack-sorted: "§aɪᴛᴇᴍ ᴅɪ ʙᴀᴄᴋᴘᴀᴄᴋ ᴛᴇʟᴀʜ ᴅɪᴜʀᴜᴛᴋᴀɴ!"
+  backpack-filter-changed: "§aғɪʟᴛᴇʀ ʙᴀᴄᴋᴘᴀᴄᴋ ᴛᴇʟᴀʜ ᴅɪᴜʙᴀʜ ᴍᴇɴᴊᴀᴅɪ: %filter%"
+  backpack-items-compressed: "§aɪᴛᴇᴍ ᴅɪ ʙᴀᴄᴋᴘᴀᴄᴋ ᴛᴇʟᴀʜ ᴅɪᴋᴏᴍᴘʀᴇsɪ!"
+  backpack-auto-compressed: "§aɪᴛᴇᴍ ᴏᴛᴏᴍᴀᴛɪs ᴅɪᴋᴏᴍᴘʀᴇsɪ ᴅᴀʟᴀᴍ %backpack%!"
+  auto-collect-enabled: "§aᴀᴜᴛᴏ-ᴄᴏʟʟᴇᴄᴛ ᴛᴇʟᴀʜ ᴅɪᴀᴋᴛɪғᴋᴀɴ!"
+  auto-collect-disabled: "§cᴀᴜᴛᴏ-ᴄᴏʟʟᴇᴄᴛ ᴛᴇʟᴀʜ ᴅɪɴᴏɴᴀᴋᴛɪғᴋᴀɴ!"
+  cannot-take-backpack: "§cᴀɴᴅᴀ ᴛɪᴅᴀᴋ ᴅᴀᴘᴀᴛ ᴍᴇɴɢᴀᴍʙɪʟ ʙᴀᴄᴋᴘᴀᴄᴋ ᴘᴇᴍᴀɪɴ ʟᴀɪɴ!"
+  cannot-pickup-backpack: "§cᴀɴᴅᴀ ᴛɪᴅᴀᴋ ᴅᴀᴘᴀᴛ ᴍᴇɴᴇᴍᴘᴜᴛ ʙᴀᴄᴋᴘᴀᴄᴋ ʏᴀɴɢ ʙᴜᴋᴀɴ ᴍɪʟɪᴋ ᴀɴᴅᴀ!"
+  backpack-protected-death: "§aʙᴀᴄᴋᴘᴀᴄᴋ ᴀɴᴅᴀ ᴛᴇʟᴀʜ ᴅɪʟɪɴᴅᴜɴɢɪ ᴅᴀɴ ᴀᴋᴀɴ ᴅɪᴋᴇᴍʙᴀʟɪᴋᴀɴ sᴀᴀᴛ ʀᴇsᴘᴀᴡɴ!"
+  backpack-auto-smelted: "§aɪᴛᴇᴍ ᴏᴛᴏᴍᴀᴛɪs ᴅɪ-sᴍᴇʟᴛ ᴅᴀʟᴀᴍ %backpack%!"
+  not-enough-money: "§cᴀɴᴅᴀ ᴛɪᴅᴀᴋ ᴍᴇᴍɪʟɪᴋɪ ᴄᴜᴋᴜᴘ ᴜᴀɴɢ! ᴅɪʙᴜᴛᴜʜᴋᴀɴ %cost%."
+  not-enough-money-upgrade: "§cᴀɴᴅᴀ ᴛɪᴅᴀᴋ ᴍᴇᴍɪʟɪᴋɪ ᴄᴜᴋᴜᴘ ᴜᴀɴɢ ᴜɴᴛᴜᴋ ᴜᴘɢʀᴀᴅᴇ! ᴅɪʙᴜᴛᴜʜᴋᴀɴ %cost%."
+  backpack-purchased: "§aᴀɴᴅᴀ ᴍᴇᴍʙᴇʟɪ %type% Backpack sᴇʜᴀʀɢᴀ %cost%!"
+  backpack-upgraded-cost: "§aʙᴀᴄᴋᴘᴀᴄᴋ ᴀɴᴅᴀ ᴅɪᴜᴘɢʀᴀᴅᴇ ᴅᴀʀɪ %from% ᴋᴇ %to% ᴅᴇɴɢᴀɴ ʙɪᴀʏᴀ %cost%!"
+  cooldown-active: "§cғɪᴛᴜʀ ɪɴɪ ᴍᴀsɪʜ ᴅᴀʟᴀᴍ ᴄᴏᴏʟᴅᴏᴡɴ. ᴛᴇʀsɪsᴀ: %time% ᴅᴇᴛɪᴋ."
+
+# Pengaturan Ekonomi (memerlukan Vault)
+economy:
+  enabled: true
+  prices:
+    basic: 0      # Gratis
+    advanced: 5000
+    premium: 25000
+    ultimate: 100000
+    mining: 15000
+    farming: 15000
+    combat: 15000
+  upgrade_costs:
+    basic_to_advanced: 5000
+    advanced_to_premium: 20000
+    premium_to_ultimate: 75000
+  use_costs:
+    # Biaya per penggunaan (0 untuk gratis)
+    open: 0
+    sort: 0
+    compress: 10
+  cooldowns:
+    # Cooldown dalam detik (0 untuk tidak ada cooldown)
+    open: 0
+    sort: 60
+    compress: 120

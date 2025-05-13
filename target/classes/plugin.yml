@@ -1,0 +1,56 @@
+name: nusabackpack
+main: id.neonbackpack.NeonBackPack
+version: 1.0
+api-version: 1.20
+description: Plugin backpack premium dengan fitur spesial untuk server Minecraft Indonesia
+authors: [NusaTeam]
+website: https://nusa.net.id
+softdepend: [Vault]
+commands:
+  backpack:
+    description: Perintah utama NusaBackpack
+    aliases: [bp]
+    usage: /backpack
+  bp:
+    description: Singkatan untuk perintah backpack
+    usage: /bp
+
+permissions:
+  neonbackpack.use:
+    description: Mengizinkan pemain menggunakan backpack
+    default: true
+  neonbackpack.basic:
+    description: Mengizinkan pemain menggunakan Basic Backpack
+    default: true
+  neonbackpack.advanced:
+    description: Mengizinkan pemain menggunakan Advanced Backpack
+    default: op
+  neonbackpack.premium:
+    description: Mengizinkan pemain menggunakan Premium Backpack
+    default: op
+  neonbackpack.ultimate:
+    description: Mengizinkan pemain menggunakan Ultimate Backpack
+    default: op
+  neonbackpack.mining:
+    description: Mengizinkan pemain menggunakan Mining Backpack
+    default: op
+  neonbackpack.farming:
+    description: Mengizinkan pemain menggunakan Farming Backpack
+    default: op
+  neonbackpack.combat:
+    description: Mengizinkan pemain menggunakan Combat Backpack
+    default: op
+  neonbackpack.admin:
+    description: Akses ke semua fitur admin NusaBackpack
+    default: op
+    children:
+      neonbackpack.basic: true
+      neonbackpack.advanced: true
+      neonbackpack.premium: true
+      neonbackpack.ultimate: true
+      neonbackpack.mining: true
+      neonbackpack.farming: true
+      neonbackpack.combat: true
+  neonbackpack.admin.bypass:
+    description: Bypass anti-theft protection
+    default: op
